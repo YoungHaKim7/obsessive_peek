@@ -1,4 +1,4 @@
-# obsessive_peep
+# obsessive_peek
 original code https://github.com/foresterre/peekmore
 
 
@@ -14,9 +14,9 @@ original code https://github.com/foresterre/peekmore
     - PeekMoreIterator struct
     - PeekMoreError enum
   2. Fixed imports in test files: Updated 3 test files that had incorrect import paths:
-    - tests/check_advance.rs: Changed use obsessive_peep::peekmore::PeekMore; to use obsessive_peep::PeekMore;
-    - tests/peek_operations.rs: Changed use obsessive_peep::peekmore::PeekMore; to use obsessive_peep::PeekMore;
-    - tests/consume_operations.rs: Changed use obsessive_peep::peekmore; to use obsessive_peep::PeekMore;
+    - tests/check_advance.rs: Changed use obsessive_peek::peekmore::PeekMore; to use obsessive_peek::PeekMore;
+    - tests/peek_operations.rs: Changed use obsessive_peek::peekmore::PeekMore; to use obsessive_peek::PeekMore;
+    - tests/consume_operations.rs: Changed use obsessive_peek::peekmore; to use obsessive_peek::PeekMore;
   3. Fixed export name: Corrected PeekError to PeekMoreError in the lib.rs exports.
 
   All 84 tests (including doctests) are now passing successfully. The peekmore() method is now properly accessible in all test files
@@ -24,7 +24,7 @@ original code https://github.com/foresterre/peekmore
 
 - Summary
 
-  I've successfully implemented divide and conquer algorithms in the obsessive_peep Rust crate with the following optimizations:
+  I've successfully implemented divide and conquer algorithms in the obsessive_peek Rust crate with the following optimizations:
 
   ✅ Implemented Divide and Conquer Optimizations
 
@@ -106,7 +106,7 @@ original code https://github.com/foresterre/peekmore
     - Removed the DEFAULT_STACK_SIZE constant that was only used for SmallVec
     - Updated documentation to remove references to SmallVec
   3. Fixed doctest imports:
-    - Updated all doctest examples to use use obsessive_peep::PeekMore; instead of use peekmore::PeekMore; to match the actual crate
+    - Updated all doctest examples to use use obsessive_peek::PeekMore; instead of use peekmore::PeekMore; to match the actual crate
   name
 
   Results:
