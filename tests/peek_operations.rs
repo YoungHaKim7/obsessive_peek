@@ -204,10 +204,7 @@ fn peek_previous() {
     assert_eq!(iter.cursor(), 0);
 
     let peek = iter.peek_previous();
-    assert_eq!(
-        peek,
-        Err(PeekMoreError::ElementHasBeenConsumed)
-    );
+    assert_eq!(peek, Err(PeekMoreError::ElementHasBeenConsumed));
     assert_eq!(iter.cursor(), 0);
 }
 
@@ -245,17 +242,11 @@ fn peek_previous_beyond_none() {
     assert_eq!(iter.cursor(), 0);
 
     let peek = iter.peek_previous();
-    assert_eq!(
-        peek,
-        Err(PeekMoreError::ElementHasBeenConsumed)
-    );
+    assert_eq!(peek, Err(PeekMoreError::ElementHasBeenConsumed));
     assert_eq!(iter.cursor(), 0);
 
     let peek = iter.peek_previous();
-    assert_eq!(
-        peek,
-        Err(PeekMoreError::ElementHasBeenConsumed)
-    );
+    assert_eq!(peek, Err(PeekMoreError::ElementHasBeenConsumed));
     assert_eq!(iter.cursor(), 0);
 }
 

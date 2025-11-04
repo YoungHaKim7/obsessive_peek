@@ -106,6 +106,6 @@ mod peekerror;
 mod peekmore;
 
 // Public exports
-pub use peekmore::PeekMore;
 pub use peek_iterator::PeekMoreIterator;
 pub use peekerror::PeekMoreError;
+pub use peekmore::PeekMore;
