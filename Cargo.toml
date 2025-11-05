@@ -2,5 +2,16 @@
 name = "obsessive_peek"
 version = "0.1.0"
 edition = "2024"
+rust-version = "1.91"
+authors = ["GYoung <ytok1108@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/YoungHaKim7/obsessive_peek"
+documentation = "https://docs.rs/obsessive_peek/"
+description = """
+An iterator adapter to peek at future elements without advancing the cursor of the underlying iterator.
+"""
+categories = ["data-structures", "no-std"]
+keywords = ["peek", "multipeek", "iterator"]
 
 [dependencies]

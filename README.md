@@ -1,5 +1,7 @@
 # obsessive_peek
-original code https://github.com/foresterre/peekmore
+- original code https://github.com/foresterre/peekmore
+- https://crates.io/crates/multipeek
+  - https://github.com/LukeMathWalker/multipeek
 
 
 # Changes Made:
