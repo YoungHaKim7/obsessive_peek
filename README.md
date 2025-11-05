@@ -1,8 +1,37 @@
+
+
+<h1 align="center">obsessive_peek</h1>
+<br />
+
+<div align="center">
+  <!-- Crates version -->
+  <a href="https://crates.io/crates/obsessive_peek">
+    <img src="https://img.shields.io/crates/v/obsessive_peek.svg?style=flat-square"
+    alt="Crates.io version" />
+  </a>
+  <!-- Downloads -->
+  <a href="https://crates.io/crates/obsessive_peek">
+    <img src="https://img.shields.io/crates/d/obsessive_peek.svg?style=flat-square"
+      alt="Download" />
+  </a>
+  <!-- docs.rs docs -->
+  <a href="https://docs.rs/obsessive_peek">
+    <img src="https://img.shields.io/badge/docs-latest-blue.svg?style=flat-square"
+      alt="docs.rs docs" />
+  </a>
+</div>
+<br/>
+
+An iterator adapter to peek at future elements without advancing the cursor of the underlying
+iterator.
+
+Check out the [documentation](https://docs.rs/obsessive_peek) for more details.
+
+
 # obsessive_peek
 - original code https://github.com/foresterre/peekmore
 - https://crates.io/crates/multipeek
   - https://github.com/LukeMathWalker/multipeek
-
 
 # Changes Made:
 - Perfect! All tests are now passing. Let me run a more concise summary:
