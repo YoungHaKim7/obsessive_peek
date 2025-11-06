@@ -2,37 +2,45 @@ use criterion::{Criterion, criterion_group, criterion_main};
 use obsessive_peek::PeekMore;
 
 fn std_peek_test() {
-    let iter = vec![1, 2, 3, 4, 5].into_iter();
-    let mut iter02 = vec![10, 20, 30, 40, 50].into_iter();
+    let mut iter = vec![1, 2, 3, 4, 5].into_iter().peekable();
 
-    // Peek at the first element.
-    let first_peek = iter.peekable();
+    // Peek at the first element
+    let first_peek = iter.peek().cloned();
+    assert_eq!(first_peek, Some(1));
 
-    // Advance the iterator cursor to point at the first element.
-    let first = iter02.next();
+    // Consume first element
+    let first = iter.next();
+    assert_eq!(first, Some(1));
 
-    // // Peek two steps ahead, at the third element.
-    let third_peek = iter.peek_nth(1).cloned();
+    // Peek at the second element
+    let second_peek = iter.peek().cloned();
+    assert_eq!(second_peek, Some(2));
+
+    // Consume second element
+    let second = iter.next();
+    assert_eq!(second, Some(2));
+
+    // Peek at the third element
+    let third_peek = iter.peek().cloned();
     assert_eq!(third_peek, Some(3));
 
-    // Advance the iterator cursor twice.
-    // The iterator cursor will now point to the third element.
-    iter.next();
+    // Consume third element
     let third = iter.next();
+    assert_eq!(third, Some(3));
     assert_eq!(third_peek, third);
 
-    // Peeking beyond the end of the iterator returns `None`.
-    let ambitious_peek = iter.peek_nth(5);
-    assert!(ambitious_peek.is_none());
+    // Continue consuming remaining elements
+    assert_eq!(iter.next(), Some(4));
+    assert_eq!(iter.next(), Some(5));
+
+    // Peeking beyond the end returns None
+    assert_eq!(iter.peek(), None);
+    assert_eq!(iter.next(), None);
 }
 
 fn peek_more_test() {
     let range10 = 0..11;
-    let range10_clone = 0..11;
     let mut peekable = range10.peekmore();
-    let peekable_clone = range10_clone.peekmore();
-    // println!("range10: {range10_clone:?}");
-    println!("range10: {peekable_clone:?}");
 
     // Peek at the first element
     let peek_first = peekable.peek();
@@ -55,16 +63,14 @@ fn peek_more_test() {
 }
 
 pub fn peek_init(c: &mut Criterion) {
-    let size = 1_000_000;
-
     c.bench_function("std_peek test", |b| {
         b.iter(|| {
-            let std_peek_data = std_peek_test();
+            std_peek_test();
         })
     });
     c.bench_function("peekmore test", |b| {
         b.iter(|| {
-            let std_peek_data = std_peek_test();
+            peek_more_test();
         })
     });
 }
