@@ -70,46 +70,6 @@ jobs:
         with:
           command: doc
           args: --no-deps --document-private-items
-
-  coverage:
-    name: Code coverage
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Install stable toolchain
-        uses: actions-rs/toolchain@v1
-        with:
-          toolchain: stable
-          override: true
-
-      - uses: Swatinem/rust-cache@v1
-      - name: Run cargo-tarpaulin
-        uses: actions-rs/tarpaulin@v0.1
-        with:
-          args: '--ignore-tests'
-  # clippy:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v4
-  #     - uses: actions-rs/toolchain@v1
-  #       with:
-  #         toolchain: stable
-  #         components: clippy
-  #         override: true
-  #     - uses: Swatinem/rust-cache@v2
-  #     - uses: actions-rs/clippy-check@v1
-  #       with:
-  #         name: clippy-all-features
-  #         token: ${{ secrets.GITHUB_TOKEN }}
-  #         args: --all-features --all-targets -- -D warnings
-  #     - uses: actions-rs/clippy-check@v1
-  #       with:
-  #         name: clippy-no-default-features
-  #         token: ${{ secrets.GITHUB_TOKEN }}
-  #         args: --no-default-features --all-targets -- -D warnings
-
   test:
     runs-on: ubuntu-latest
     timeout-minutes: 30
