@@ -63,13 +63,6 @@ fn main() {
 }
 ```
 
-- result
-
-```bash
-
-
-```
-
 # ✅ Implemented Divide and Conquer Optimizations
 
 - 1. fill_queue Optimization 
