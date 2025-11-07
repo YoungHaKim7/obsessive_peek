@@ -1,4 +1,4 @@
-name: Rust Unit Tests
+name: Rust Unit Tests & fmt & Clippy & Doc
 on:
   pull_request: {}
   push:
@@ -49,7 +49,6 @@ jobs:
         with:
           command: clippy
           args: -- -D warnings
-
   docs:
     name: Docs
     runs-on: ubuntu-latest
